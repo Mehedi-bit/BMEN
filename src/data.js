@@ -5,7 +5,7 @@ export const sliderItems = [
         img:'../src/assets/chocolateKaftan.png',
         title:"SUMMER SALE!",
         desc:"DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS",
-        bg: "f5fafd",
+        bg: "fbf0f4",
     },
     {
         id:2,
@@ -19,7 +19,7 @@ export const sliderItems = [
         img:'../src/assets/sweetKaftan.png',
         title:"POPULAR SALE!",
         desc:"DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS",
-        bg: "fbf0f4",
+        bg: "f7f1ec",
     },
 
 ]
