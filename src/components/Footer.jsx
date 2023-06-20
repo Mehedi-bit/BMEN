@@ -6,11 +6,15 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import RoomIcon from "@mui/icons-material/Room";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import styled from "styled-components";
+import { mobile, pc, tablet } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   background-color: #733c16;
   color: #fff;
+  ${mobile({ flexDirection: "column" })}
+  ${tablet({ flexDirection: "column" })}
+  ${pc({ fontSize: "14px" })}
 `;
 
 const Left = styled.div`
@@ -45,6 +49,8 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
+  ${tablet({ display: "none" })}
 `;
 
 const Title = styled.h3`
@@ -67,6 +73,8 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#783e14" })}
+  ${tablet({ backgroundColor: "#783e14" })}
 `;
 
 const ContactItem = styled.div`

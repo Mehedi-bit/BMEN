@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
+import { mobile, pc, tablet } from "../responsive";
 
 const Container = styled.div`
   flex: 1;
@@ -12,6 +13,8 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  ${mobile({ height: "60vh" })}
+  ${tablet({ height: "70vh" })}
 `;
 
 const Info = styled.div`
@@ -29,6 +32,7 @@ const Info = styled.div`
 const Title = styled.h1`
   color: white;
   margin-bottom: 20px;
+  ${pc({ fontSize: "25px" })}
 `;
 
 const Button = styled.button`

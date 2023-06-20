@@ -2,10 +2,13 @@ import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCart from "@mui/icons-material/ShoppingCartOutlined";
+import { mobile, pc } from "../responsive";
+import { tablet } from "../responsive";
 
 const Container = styled.div`
   height: 60px;
   color: black;
+  ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
@@ -13,36 +16,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0" })}
+  ${tablet({ padding: "10px 10px" })}
 `;
 
 const Left = styled.div`
   flex: 1;
-  display: flex;
-  align-items: center;
-`;
-
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
-`;
-
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgrey;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-`;
-
-const Input = styled.input`
-  background-color: transparent;
-  border: none;
-  outline: none;
-`;
-
-const Center = styled.div`
-  flex: 1;
-  text-align: center;
   margin-top: 0;
   padding-bottom: 0;
 `;
@@ -50,8 +29,40 @@ const Center = styled.div`
 const Logo = styled.p`
   font-weight: bold;
   font-size: 35px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 0 0 10%;
+  ${mobile({ fontSize: "24px" })}
+  ${tablet({ fontSize: "25px" })}
+`;
+
+const Center = styled.div`
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SearchContainer = styled.div`
+  border: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  /* width: 40%;
+  justify-content: space-between; */
+
+  &:hover {
+    border: 0.5px solid chocolate;
+    transition: all 0.5s ease;
+  }
+`;
+
+const Input = styled.input`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 400px;
+  ${mobile({ width: "50px" })}
+  ${tablet({ width: "120px" })}
+  ${pc({ width: "180px" })}
 `;
 
 const Right = styled.div`
@@ -59,12 +70,26 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  ${mobile({ justifyContent: "center", flex: 2, paddingRight: "12px" })}
+  ${tablet({ justifyContent: "flex-end", flex: 2, paddingRight: "12px" })}
+`;
+
+const Language = styled.span`
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #f2f0f0;
+  padding: 2px 5px;
+  ${mobile({ display: "none" })}
+  ${tablet({ display: "none" })}
 `;
 
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  ${mobile({ fontSize: "11px", marginLeft: "10px" })}
+  ${tablet({ fontSize: "12px", marginLeft: "10px" })}
+  ${pc({ fontSize: "12px", marginLeft: "12px" })}
 `;
 
 const Navbar = () => {
@@ -72,16 +97,22 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input />
-            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
-          </SearchContainer>
+          <Logo>BMEN.</Logo>
         </Left>
         <Center>
-          <Logo>BMEN.</Logo>
+          <SearchContainer>
+            <Input placeholder="Search" />
+            <SearchIcon
+              style={{
+                color: "black",
+                fontSize: 16,
+                cursor: "pointer",
+              }}
+            />
+          </SearchContainer>
         </Center>
         <Right>
+          <Language>EN</Language>
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
           <MenuItem>

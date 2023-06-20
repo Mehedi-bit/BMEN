@@ -3,6 +3,7 @@ import ArrowLeftIcon from "@mui/icons-material/ArrowLeftOutlined";
 import ArrowRightIcon from "@mui/icons-material/ArrowRightOutlined";
 import { sliderItems } from "../data";
 import { useState } from "react";
+import { mobile, pc, tablet } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -10,6 +11,9 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({ display: "none" })}
+  ${tablet({ height: "50vh" })}
+  ${pc({ height: "80vh" })}
 `;
 
 const Arrow = styled.div`
@@ -44,6 +48,8 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
+  ${tablet({ height: "100%" })}
+  ${pc({ height: "100%" })}
 `;
 const ImgContainer = styled.div`
   height: 100%;
@@ -53,6 +59,8 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 90%;
+  ${tablet({ height: "100%" })}
+  ${pc({ height: "100%" })}
 `;
 
 const InfoContainer = styled.div`
@@ -62,19 +70,25 @@ const InfoContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 70px;
+  ${tablet({ fontSize: "20px" })}
+  ${pc({ fontSize: "50px" })}
 `;
 const Description = styled.p`
   margin: 50px 0;
   font-size: 20px;
   color: #444;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
+  ${tablet({ fontSize: "10px", margin: "20px 0" })}
+  ${pc({ margin: "20px 0" })}
 `;
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+  ${tablet({ padding: "5px", fontSize: "10px" })}
+  ${pc({ fontSize: "15px" })}
 `;
 
 const Slider = () => {
