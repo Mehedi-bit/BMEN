@@ -6,11 +6,13 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import shirt1 from "../assets/shirt1.png";
 import shoe1 from "../assets/shoe1.png";
+import { mobile, pc, tablet } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
+  ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -30,13 +32,17 @@ const TopButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   border: ${(props) =>
-    props.type === "filled" ? "none" : "2px solid #783502"};
+    props.type === "filled" ? "none" : "2px solid #5d4037"};
   background-color: ${(props) =>
-    props.type === "filled" ? "#783502" : "transparent"};
-  color: ${(props) => (props.type === "filled" ? "white" : "#783502")};
+    props.type === "filled" ? "#5d4037" : "transparent"};
+  color: ${(props) => (props.type === "filled" ? "white" : "#5d4037")};
+  margin: ${(props) => (props.type === "filled" ? "0" : "0 2px")};
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  ${mobile({ display: "none" })}
+  ${tablet({ display: "none" })}
+`;
 const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -46,6 +52,8 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
+  ${tablet({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
@@ -55,6 +63,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
@@ -103,11 +112,13 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
+  ${mobile({ margin: "5px 15px" })}
 `;
 
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
+  ${mobile({ marginBottom: "20px" })}
 `;
 
 const Hr = styled.hr`
@@ -122,6 +133,8 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 50vh;
+  ${tablet({ margin: "50px 10%" })}
+  ${pc({ height: "100%" })}
 `;
 
 const SummaryTitle = styled.h1`
@@ -144,7 +157,7 @@ const Button = styled.button`
   width: 100%;
   padding: 10px;
   border: none;
-  background-color: #642c01;
+  background-color: #5d4037;
   color: white;
   font-weight: 600;
   cursor: pointer;

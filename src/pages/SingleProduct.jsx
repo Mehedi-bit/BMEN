@@ -6,12 +6,16 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import kaftan2 from "../assets/kaftan2.jpeg";
+import { mobile, tablet, pc } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${mobile({ flexDirection: "column", padding: "10px" })}
+  ${tablet({ flexDirection: "column", padding: "10px" })}
+  ${pc({ height: "70vh", padding: "40px" })}
 `;
 
 const ImgContainer = styled.div`
@@ -22,11 +26,17 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  ${mobile({ height: "50vh" })}
+  ${tablet({ height: "70vh" })}
+  ${pc({ height: "100%" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${mobile({ padding: "10px" })}
+  ${tablet({ padding: "40px" })}
+  ${pc({ height: "100%" })}
 `;
 
 const Title = styled.h1`
@@ -47,6 +57,9 @@ const FilterContainer = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
+  ${mobile({ width: "100%" })}
+  ${tablet({ width: "100%" })}
+  ${pc({ width: "100%", margin: "20px 0px" })}
 `;
 
 const Filter = styled.div`
@@ -80,6 +93,9 @@ const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ width: "100%" })}
+  ${tablet({ width: "100%" })}
+  ${pc({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`
@@ -101,13 +117,13 @@ const Amount = styled.span`
 
 const Button = styled.button`
   padding: 15px;
-  border: 2px solid #623717;
+  border: 2px solid #5d4037;
   background-color: white;
   cursor: pointer;
   font-weight: 500;
 
   &:hover {
-    background-color: #8b4f23;
+    background-color: #5d4037;
     color: white;
     font-weight: 500;
     transition: all 0.2s ease;

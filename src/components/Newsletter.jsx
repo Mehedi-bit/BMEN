@@ -19,7 +19,7 @@ const Desc = styled.div`
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
-  ${mobile({ textAlign: "center", padding: "5px 0" })}
+  ${mobile({ textAlign: "center", padding: "5px 5px" })}
   ${tablet({ textAlign: "center", padding: "5px 0" })}
 `;
 
@@ -44,7 +44,7 @@ const Input = styled.input`
 const Button = styled.button`
   flex: 1;
   border: none;
-  background-color: #7c4822;
+  background-color: #5d4037;
   color: white;
   cursor: pointer;
 `;

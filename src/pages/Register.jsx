@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import horsebg from "../assets/horsebg.png";
+import { mobile, pc, tablet } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -17,6 +18,9 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: white;
+  ${mobile({ width: "75%" })}
+  ${tablet({ width: "50%" })}
+  ${pc({ width: "40%" })}
 `;
 
 const Title = styled.h1`

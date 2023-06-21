@@ -10,7 +10,7 @@ import { mobile, pc, tablet } from "../responsive";
 
 const Container = styled.div`
   display: flex;
-  background-color: #733c16;
+  background-color: #5d4037;
   color: #fff;
   ${mobile({ flexDirection: "column" })}
   ${tablet({ flexDirection: "column" })}
@@ -73,8 +73,8 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
-  ${mobile({ backgroundColor: "#783e14" })}
-  ${tablet({ backgroundColor: "#783e14" })}
+  ${mobile({ backgroundColor: "#64453c" })}
+  ${tablet({ backgroundColor: "#64453c" })}
 `;
 
 const ContactItem = styled.div`
